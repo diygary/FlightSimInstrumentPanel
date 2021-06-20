@@ -27,7 +27,7 @@
 <layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
@@ -7098,173 +7098,40 @@ single cathode, 13 mm</description>
 <wire x1="177.8" y1="132.08" x2="185.42" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$84" class="0">
-<segment>
-<wire x1="55.88" y1="-78.74" x2="55.88" y2="-66.04" width="0.1524" layer="91"/>
-<pinref part="U5" gate="G$1" pin="GPB3"/>
-<wire x1="55.88" y1="-66.04" x2="96.52" y2="-66.04" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$85" class="0">
-<segment>
-<wire x1="58.42" y1="-93.98" x2="58.42" y2="-68.58" width="0.1524" layer="91"/>
-<pinref part="U5" gate="G$1" pin="GPB2"/>
-<wire x1="58.42" y1="-68.58" x2="96.52" y2="-68.58" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$86" class="0">
-<segment>
-<wire x1="60.96" y1="-109.22" x2="60.96" y2="-71.12" width="0.1524" layer="91"/>
-<pinref part="U5" gate="G$1" pin="GPB1"/>
-<wire x1="60.96" y1="-71.12" x2="96.52" y2="-71.12" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$87" class="0">
 <segment>
-<pinref part="S3" gate="1" pin="S"/>
-<wire x1="12.7" y1="-68.58" x2="12.7" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="-71.12" x2="-20.32" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="-71.12" x2="-20.32" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PE5"/>
+<wire x1="-20.32" y1="-66.04" x2="-20.32" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="-38.1" x2="-17.78" y2="-38.1" width="0.1524" layer="91"/>
+<pinref part="S3" gate="1" pin="P"/>
+<wire x1="2.54" y1="-66.04" x2="-20.32" y2="-66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$88" class="0">
 <segment>
-<pinref part="S4" gate="1" pin="S"/>
-<wire x1="12.7" y1="-83.82" x2="12.7" y2="-86.36" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="-86.36" x2="-22.86" y2="-86.36" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-86.36" x2="-22.86" y2="-35.56" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PE4"/>
+<wire x1="-22.86" y1="-81.28" x2="-22.86" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="-22.86" y1="-35.56" x2="-17.78" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="S4" gate="1" pin="P"/>
+<wire x1="2.54" y1="-81.28" x2="-22.86" y2="-81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$89" class="0">
 <segment>
-<pinref part="S5" gate="1" pin="S"/>
-<wire x1="12.7" y1="-99.06" x2="12.7" y2="-101.6" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="-101.6" x2="-25.4" y2="-101.6" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="-101.6" x2="-25.4" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PE3"/>
+<wire x1="-25.4" y1="-96.52" x2="-25.4" y2="-33.02" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="-33.02" x2="-17.78" y2="-33.02" width="0.1524" layer="91"/>
+<pinref part="S5" gate="1" pin="P"/>
+<wire x1="2.54" y1="-96.52" x2="-25.4" y2="-96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$90" class="0">
 <segment>
-<wire x1="12.7" y1="-116.84" x2="-27.94" y2="-116.84" width="0.1524" layer="91"/>
-<wire x1="-27.94" y1="-116.84" x2="-27.94" y2="-30.48" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PE2"/>
+<wire x1="-27.94" y1="-111.76" x2="-27.94" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="-27.94" y1="-30.48" x2="-17.78" y2="-30.48" width="0.1524" layer="91"/>
-<pinref part="S6" gate="1" pin="S"/>
-<wire x1="12.7" y1="-114.3" x2="12.7" y2="-116.84" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$94" class="0">
-<segment>
-<pinref part="IC1" gate="A" pin="G2"/>
-<pinref part="IC1" gate="A" pin="G1"/>
-<wire x1="175.26" y1="81.28" x2="175.26" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="83.82" x2="175.26" y2="86.36" width="0.1524" layer="91"/>
-<junction x="175.26" y="83.82"/>
-<pinref part="IC2" gate="A" pin="G1"/>
-<pinref part="IC2" gate="A" pin="G2"/>
-<wire x1="175.26" y1="-167.64" x2="175.26" y2="-170.18" width="0.1524" layer="91"/>
-<pinref part="IC4" gate="A" pin="G1"/>
-<pinref part="IC4" gate="A" pin="G2"/>
-<wire x1="175.26" y1="-15.24" x2="175.26" y2="-17.78" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="A" pin="G1"/>
-<pinref part="IC3" gate="A" pin="G2"/>
-<wire x1="177.8" y1="-78.74" x2="177.8" y2="-81.28" width="0.1524" layer="91"/>
-<wire x1="177.8" y1="-81.28" x2="175.26" y2="-81.28" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="-81.28" x2="175.26" y2="-116.84" width="0.1524" layer="91"/>
-<junction x="177.8" y="-81.28"/>
-<pinref part="U1" gate="G$1" pin="GND"/>
-<wire x1="17.78" y1="-45.72" x2="53.34" y2="-45.72" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="-45.72" x2="53.34" y2="-116.84" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="-116.84" x2="53.34" y2="-139.7" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="-139.7" x2="53.34" y2="-213.36" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="-213.36" x2="144.78" y2="-213.36" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="-213.36" x2="144.78" y2="-170.18" width="0.1524" layer="91"/>
-<pinref part="U3" gate="G$1" pin="A2"/>
-<wire x1="144.78" y1="-170.18" x2="144.78" y2="-167.64" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="-167.64" x2="127" y2="-167.64" width="0.1524" layer="91"/>
-<pinref part="U3" gate="G$1" pin="A1"/>
-<wire x1="127" y1="-170.18" x2="144.78" y2="-170.18" width="0.1524" layer="91"/>
-<junction x="144.78" y="-170.18"/>
-<wire x1="53.34" y1="-116.84" x2="139.7" y2="-116.84" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="-116.84" x2="139.7" y2="-83.82" width="0.1524" layer="91"/>
-<junction x="53.34" y="-116.84"/>
-<pinref part="U5" gate="G$1" pin="A2"/>
-<wire x1="139.7" y1="-83.82" x2="139.7" y2="-78.74" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="-78.74" x2="127" y2="-78.74" width="0.1524" layer="91"/>
-<pinref part="U5" gate="G$1" pin="A0"/>
-<wire x1="127" y1="-83.82" x2="139.7" y2="-83.82" width="0.1524" layer="91"/>
-<junction x="139.7" y="-83.82"/>
-<wire x1="53.34" y1="-45.72" x2="53.34" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="-20.32" x2="137.16" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="53.34" y="-45.72"/>
-<pinref part="U2" gate="G$1" pin="A1"/>
-<wire x1="137.16" y1="-20.32" x2="137.16" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="137.16" y1="20.32" x2="137.16" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="137.16" y1="22.86" x2="127" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="A0"/>
-<wire x1="127" y1="20.32" x2="137.16" y2="20.32" width="0.1524" layer="91"/>
-<junction x="137.16" y="20.32"/>
-<wire x1="53.34" y1="-20.32" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="48.26" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="53.34" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="66.04" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="86.36" x2="142.24" y2="86.36" width="0.1524" layer="91"/>
-<junction x="53.34" y="-20.32"/>
-<pinref part="U4" gate="G$1" pin="A2"/>
-<wire x1="142.24" y1="86.36" x2="142.24" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="121.92" x2="142.24" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="124.46" x2="142.24" y2="127" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="127" x2="127" y2="127" width="0.1524" layer="91"/>
-<pinref part="U4" gate="G$1" pin="A1"/>
-<wire x1="127" y1="124.46" x2="142.24" y2="124.46" width="0.1524" layer="91"/>
-<junction x="142.24" y="124.46"/>
-<pinref part="U4" gate="G$1" pin="A0"/>
-<wire x1="127" y1="121.92" x2="142.24" y2="121.92" width="0.1524" layer="91"/>
-<junction x="142.24" y="121.92"/>
-<wire x1="175.26" y1="-116.84" x2="139.7" y2="-116.84" width="0.1524" layer="91"/>
-<junction x="139.7" y="-116.84"/>
-<wire x1="175.26" y1="-17.78" x2="175.26" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="-20.32" x2="137.16" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="175.26" y="-17.78"/>
-<junction x="137.16" y="-20.32"/>
-<wire x1="175.26" y1="-170.18" x2="144.78" y2="-170.18" width="0.1524" layer="91"/>
-<junction x="175.26" y="-170.18"/>
-<wire x1="175.26" y1="86.36" x2="142.24" y2="86.36" width="0.1524" layer="91"/>
-<junction x="142.24" y="86.36"/>
-<pinref part="U2" gate="G$1" pin="VSS"/>
-<wire x1="96.52" y1="53.34" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
-<junction x="53.34" y="53.34"/>
-<pinref part="U5" gate="G$1" pin="VSS"/>
-<wire x1="96.52" y1="-50.8" x2="91.44" y2="-50.8" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="-50.8" x2="91.44" y2="-45.72" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="-45.72" x2="53.34" y2="-45.72" width="0.1524" layer="91"/>
-<pinref part="U4" gate="G$1" pin="VSS"/>
-<wire x1="96.52" y1="154.94" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="154.94" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
-<junction x="53.34" y="86.36"/>
-<pinref part="U3" gate="G$1" pin="VSS"/>
-<wire x1="96.52" y1="-139.7" x2="53.34" y2="-139.7" width="0.1524" layer="91"/>
-<junction x="53.34" y="-139.7"/>
-<junction x="53.34" y="-213.36"/>
-<pinref part="R1" gate="G$1" pin="E"/>
-<wire x1="-35.56" y1="-213.36" x2="53.34" y2="-213.36" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="48.26" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
-<junction x="53.34" y="48.26"/>
-<pinref part="R2" gate="G$1" pin="E"/>
-<wire x1="22.86" y1="66.04" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
-<junction x="53.34" y="66.04"/>
-<pinref part="R37" gate="G$1" pin="1"/>
-<wire x1="-40.64" y1="-48.26" x2="-40.64" y2="-213.36" width="0.1524" layer="91"/>
-<wire x1="-40.64" y1="-213.36" x2="-35.56" y2="-213.36" width="0.1524" layer="91"/>
-<pinref part="R38" gate="G$1" pin="1"/>
-<wire x1="-35.56" y1="-48.26" x2="-35.56" y2="-213.36" width="0.1524" layer="91"/>
-<junction x="-35.56" y="-213.36"/>
+<pinref part="S6" gate="1" pin="P"/>
+<wire x1="2.54" y1="-111.76" x2="-27.94" y2="-111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$79" class="0">
@@ -7430,12 +7297,8 @@ single cathode, 13 mm</description>
 </net>
 <net name="N$104" class="0">
 <segment>
-<pinref part="R2" gate="G$1" pin="A"/>
-<wire x1="22.86" y1="55.88" x2="22.86" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="53.34" x2="12.7" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="+3.3V"/>
-<wire x1="17.78" y1="17.78" x2="22.86" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="17.78" x2="50.8" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="17.78" x2="50.8" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="17.78" x2="50.8" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="VDD"/>
 <wire x1="50.8" y1="27.94" x2="50.8" y2="104.14" width="0.1524" layer="91"/>
@@ -7448,10 +7311,7 @@ single cathode, 13 mm</description>
 <pinref part="U5" gate="G$1" pin="VDD"/>
 <wire x1="93.98" y1="2.54" x2="96.52" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="2.54" x2="50.8" y2="-22.86" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="-22.86" x2="50.8" y2="-63.5" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="-63.5" x2="50.8" y2="-78.74" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="-78.74" x2="50.8" y2="-93.98" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="-93.98" x2="50.8" y2="-101.6" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="-22.86" x2="50.8" y2="-101.6" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="-101.6" x2="83.82" y2="-101.6" width="0.1524" layer="91"/>
 <junction x="50.8" y="2.54"/>
 <wire x1="83.82" y1="-101.6" x2="96.52" y2="-101.6" width="0.1524" layer="91"/>
@@ -7466,8 +7326,7 @@ single cathode, 13 mm</description>
 <wire x1="139.7" y1="-22.86" x2="139.7" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="25.4" x2="127" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="VDD"/>
-<wire x1="50.8" y1="-101.6" x2="50.8" y2="-109.22" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="-109.22" x2="50.8" y2="-180.34" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="-101.6" x2="50.8" y2="-180.34" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="-180.34" x2="50.8" y2="-187.96" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="-187.96" x2="50.8" y2="-190.5" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="-190.5" x2="83.82" y2="-190.5" width="0.1524" layer="91"/>
@@ -7481,18 +7340,6 @@ single cathode, 13 mm</description>
 <pinref part="U3" gate="G$1" pin="A0"/>
 <wire x1="142.24" y1="-172.72" x2="127" y2="-172.72" width="0.1524" layer="91"/>
 <junction x="50.8" y="-22.86"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="30.48" y1="-109.22" x2="50.8" y2="-109.22" width="0.1524" layer="91"/>
-<junction x="50.8" y="-109.22"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="30.48" y1="-93.98" x2="50.8" y2="-93.98" width="0.1524" layer="91"/>
-<junction x="50.8" y="-93.98"/>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="30.48" y1="-78.74" x2="50.8" y2="-78.74" width="0.1524" layer="91"/>
-<pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="30.48" y1="-63.5" x2="50.8" y2="-63.5" width="0.1524" layer="91"/>
-<junction x="50.8" y="-63.5"/>
-<junction x="50.8" y="-78.74"/>
 <pinref part="S1" gate="1" pin="P"/>
 <wire x1="-53.34" y1="-22.86" x2="-58.42" y2="-22.86" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="-22.86" x2="-58.42" y2="27.94" width="0.1524" layer="91"/>
@@ -7502,13 +7349,6 @@ single cathode, 13 mm</description>
 <wire x1="-53.34" y1="-27.94" x2="-58.42" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="-27.94" x2="-58.42" y2="-22.86" width="0.1524" layer="91"/>
 <junction x="-58.42" y="-22.86"/>
-<pinref part="R1" gate="G$1" pin="A"/>
-<wire x1="22.86" y1="38.1" x2="22.86" y2="35.56" width="0.1524" layer="91"/>
-<junction x="22.86" y="17.78"/>
-<wire x1="22.86" y1="35.56" x2="22.86" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="53.34" x2="12.7" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="35.56" x2="22.86" y2="35.56" width="0.1524" layer="91"/>
-<junction x="22.86" y="35.56"/>
 <pinref part="U4" gate="G$1" pin="!RESET"/>
 <wire x1="127" y1="109.22" x2="134.62" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="109.22" x2="134.62" y2="91.44" width="0.1524" layer="91"/>
@@ -7541,29 +7381,6 @@ single cathode, 13 mm</description>
 <junction x="50.8" y="-180.34"/>
 </segment>
 </net>
-<net name="+5V" class="0">
-<segment>
-<pinref part="IC1" gate="P" pin="VCC"/>
-<pinref part="P+1" gate="1" pin="+5V"/>
-<wire x1="121.92" y1="-233.68" x2="106.68" y2="-233.68" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="-233.68" x2="106.68" y2="-238.76" width="0.1524" layer="91"/>
-<pinref part="IC4" gate="P" pin="VCC"/>
-<wire x1="106.68" y1="-238.76" x2="106.68" y2="-243.84" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="-243.84" x2="106.68" y2="-248.92" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="-248.92" x2="106.68" y2="-259.08" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="-238.76" x2="106.68" y2="-238.76" width="0.1524" layer="91"/>
-<junction x="106.68" y="-238.76"/>
-<pinref part="IC3" gate="P" pin="VCC"/>
-<wire x1="121.92" y1="-243.84" x2="106.68" y2="-243.84" width="0.1524" layer="91"/>
-<junction x="106.68" y="-243.84"/>
-<pinref part="IC2" gate="P" pin="VCC"/>
-<wire x1="121.92" y1="-248.92" x2="106.68" y2="-248.92" width="0.1524" layer="91"/>
-<junction x="106.68" y="-248.92"/>
-<pinref part="J1" gate="G$1" pin="VCC"/>
-<wire x1="76.2" y1="-246.38" x2="76.2" y2="-243.84" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="-243.84" x2="106.68" y2="-243.84" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="0" class="0">
 <segment>
 <pinref part="IC1" gate="P" pin="GND"/>
@@ -7587,6 +7404,130 @@ single cathode, 13 mm</description>
 <wire x1="68.58" y1="-226.06" x2="149.86" y2="-226.06" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="-226.06" x2="149.86" y2="-233.68" width="0.1524" layer="91"/>
 <junction x="149.86" y="-233.68"/>
+<pinref part="IC1" gate="A" pin="G2"/>
+<pinref part="IC1" gate="A" pin="G1"/>
+<wire x1="175.26" y1="81.28" x2="175.26" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="83.82" x2="175.26" y2="86.36" width="0.1524" layer="91"/>
+<junction x="175.26" y="83.82"/>
+<pinref part="IC2" gate="A" pin="G1"/>
+<pinref part="IC2" gate="A" pin="G2"/>
+<wire x1="175.26" y1="-167.64" x2="175.26" y2="-170.18" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="A" pin="G1"/>
+<pinref part="IC4" gate="A" pin="G2"/>
+<wire x1="175.26" y1="-15.24" x2="175.26" y2="-17.78" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="A" pin="G1"/>
+<pinref part="IC3" gate="A" pin="G2"/>
+<wire x1="177.8" y1="-78.74" x2="177.8" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="-81.28" x2="175.26" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="-81.28" x2="175.26" y2="-116.84" width="0.1524" layer="91"/>
+<junction x="177.8" y="-81.28"/>
+<pinref part="U1" gate="G$1" pin="GND"/>
+<wire x1="17.78" y1="-45.72" x2="53.34" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-45.72" x2="53.34" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-68.58" x2="53.34" y2="-83.82" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-83.82" x2="53.34" y2="-99.06" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-99.06" x2="53.34" y2="-114.3" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-114.3" x2="53.34" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-116.84" x2="53.34" y2="-139.7" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-139.7" x2="53.34" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-213.36" x2="144.78" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="-213.36" x2="144.78" y2="-170.18" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="A2"/>
+<wire x1="144.78" y1="-170.18" x2="144.78" y2="-167.64" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="-167.64" x2="127" y2="-167.64" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="A1"/>
+<wire x1="127" y1="-170.18" x2="144.78" y2="-170.18" width="0.1524" layer="91"/>
+<junction x="144.78" y="-170.18"/>
+<wire x1="53.34" y1="-116.84" x2="139.7" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="-116.84" x2="139.7" y2="-83.82" width="0.1524" layer="91"/>
+<junction x="53.34" y="-116.84"/>
+<pinref part="U5" gate="G$1" pin="A2"/>
+<wire x1="139.7" y1="-83.82" x2="139.7" y2="-78.74" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="-78.74" x2="127" y2="-78.74" width="0.1524" layer="91"/>
+<pinref part="U5" gate="G$1" pin="A0"/>
+<wire x1="127" y1="-83.82" x2="139.7" y2="-83.82" width="0.1524" layer="91"/>
+<junction x="139.7" y="-83.82"/>
+<wire x1="53.34" y1="-45.72" x2="53.34" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-20.32" x2="137.16" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="53.34" y="-45.72"/>
+<pinref part="U2" gate="G$1" pin="A1"/>
+<wire x1="137.16" y1="-20.32" x2="137.16" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="20.32" x2="137.16" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="22.86" x2="127" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="A0"/>
+<wire x1="127" y1="20.32" x2="137.16" y2="20.32" width="0.1524" layer="91"/>
+<junction x="137.16" y="20.32"/>
+<wire x1="53.34" y1="-20.32" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="48.26" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="53.34" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="66.04" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="86.36" x2="142.24" y2="86.36" width="0.1524" layer="91"/>
+<junction x="53.34" y="-20.32"/>
+<pinref part="U4" gate="G$1" pin="A2"/>
+<wire x1="142.24" y1="86.36" x2="142.24" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="121.92" x2="142.24" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="124.46" x2="142.24" y2="127" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="127" x2="127" y2="127" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="A1"/>
+<wire x1="127" y1="124.46" x2="142.24" y2="124.46" width="0.1524" layer="91"/>
+<junction x="142.24" y="124.46"/>
+<pinref part="U4" gate="G$1" pin="A0"/>
+<wire x1="127" y1="121.92" x2="142.24" y2="121.92" width="0.1524" layer="91"/>
+<junction x="142.24" y="121.92"/>
+<wire x1="175.26" y1="-116.84" x2="139.7" y2="-116.84" width="0.1524" layer="91"/>
+<junction x="139.7" y="-116.84"/>
+<wire x1="175.26" y1="-17.78" x2="175.26" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="-20.32" x2="137.16" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="175.26" y="-17.78"/>
+<junction x="137.16" y="-20.32"/>
+<wire x1="175.26" y1="-170.18" x2="144.78" y2="-170.18" width="0.1524" layer="91"/>
+<junction x="175.26" y="-170.18"/>
+<wire x1="175.26" y1="86.36" x2="142.24" y2="86.36" width="0.1524" layer="91"/>
+<junction x="142.24" y="86.36"/>
+<pinref part="U2" gate="G$1" pin="VSS"/>
+<wire x1="96.52" y1="53.34" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
+<junction x="53.34" y="53.34"/>
+<pinref part="U5" gate="G$1" pin="VSS"/>
+<wire x1="96.52" y1="-50.8" x2="91.44" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="-50.8" x2="91.44" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="-45.72" x2="53.34" y2="-45.72" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="VSS"/>
+<wire x1="96.52" y1="154.94" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="154.94" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
+<junction x="53.34" y="86.36"/>
+<pinref part="U3" gate="G$1" pin="VSS"/>
+<wire x1="96.52" y1="-139.7" x2="53.34" y2="-139.7" width="0.1524" layer="91"/>
+<junction x="53.34" y="-139.7"/>
+<junction x="53.34" y="-213.36"/>
+<pinref part="R1" gate="G$1" pin="E"/>
+<wire x1="-35.56" y1="-213.36" x2="53.34" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="48.26" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
+<junction x="53.34" y="48.26"/>
+<pinref part="R2" gate="G$1" pin="E"/>
+<wire x1="22.86" y1="66.04" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
+<junction x="53.34" y="66.04"/>
+<pinref part="R37" gate="G$1" pin="1"/>
+<wire x1="-40.64" y1="-48.26" x2="-40.64" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="-213.36" x2="-35.56" y2="-213.36" width="0.1524" layer="91"/>
+<pinref part="R38" gate="G$1" pin="1"/>
+<wire x1="-35.56" y1="-48.26" x2="-35.56" y2="-213.36" width="0.1524" layer="91"/>
+<junction x="-35.56" y="-213.36"/>
+<wire x1="149.86" y1="-226.06" x2="149.86" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="-213.36" x2="144.78" y2="-213.36" width="0.1524" layer="91"/>
+<junction x="149.86" y="-226.06"/>
+<junction x="144.78" y="-213.36"/>
+<pinref part="S6" gate="1" pin="S"/>
+<wire x1="12.7" y1="-114.3" x2="53.34" y2="-114.3" width="0.1524" layer="91"/>
+<junction x="53.34" y="-114.3"/>
+<pinref part="S3" gate="1" pin="S"/>
+<wire x1="12.7" y1="-68.58" x2="53.34" y2="-68.58" width="0.1524" layer="91"/>
+<junction x="53.34" y="-68.58"/>
+<pinref part="S4" gate="1" pin="S"/>
+<wire x1="12.7" y1="-83.82" x2="53.34" y2="-83.82" width="0.1524" layer="91"/>
+<junction x="53.34" y="-83.82"/>
+<pinref part="S5" gate="1" pin="S"/>
+<wire x1="12.7" y1="-99.06" x2="53.34" y2="-99.06" width="0.1524" layer="91"/>
+<junction x="53.34" y="-99.06"/>
 </segment>
 </net>
 <net name="N$41" class="0">
@@ -8068,6 +8009,62 @@ single cathode, 13 mm</description>
 <segment>
 <pinref part="R12" gate="G$1" pin="2"/>
 <pinref part="DS2" gate="G$1" pin="A_F"/>
+</segment>
+</net>
+<net name="N$42" class="0">
+<segment>
+<pinref part="R6" gate="G$1" pin="2"/>
+<wire x1="33.02" y1="-63.5" x2="30.48" y2="-63.5" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="30.48" y1="-78.74" x2="33.02" y2="-78.74" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="33.02" y1="-78.74" x2="33.02" y2="-93.98" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="-93.98" x2="30.48" y2="-93.98" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="33.02" y1="-93.98" x2="33.02" y2="-109.22" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="-109.22" x2="30.48" y2="-109.22" width="0.1524" layer="91"/>
+<junction x="33.02" y="-93.98"/>
+<wire x1="33.02" y1="-63.5" x2="33.02" y2="-78.74" width="0.1524" layer="91"/>
+<junction x="33.02" y="-109.22"/>
+<pinref part="IC1" gate="P" pin="VCC"/>
+<pinref part="P+1" gate="1" pin="+5V"/>
+<wire x1="121.92" y1="-233.68" x2="106.68" y2="-233.68" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-233.68" x2="106.68" y2="-238.76" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="P" pin="VCC"/>
+<wire x1="106.68" y1="-238.76" x2="106.68" y2="-243.84" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-243.84" x2="106.68" y2="-248.92" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-248.92" x2="106.68" y2="-259.08" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="-238.76" x2="106.68" y2="-238.76" width="0.1524" layer="91"/>
+<junction x="106.68" y="-238.76"/>
+<pinref part="IC3" gate="P" pin="VCC"/>
+<wire x1="121.92" y1="-243.84" x2="106.68" y2="-243.84" width="0.1524" layer="91"/>
+<junction x="106.68" y="-243.84"/>
+<pinref part="IC2" gate="P" pin="VCC"/>
+<wire x1="121.92" y1="-248.92" x2="106.68" y2="-248.92" width="0.1524" layer="91"/>
+<junction x="106.68" y="-248.92"/>
+<pinref part="J1" gate="G$1" pin="VCC"/>
+<wire x1="76.2" y1="-246.38" x2="76.2" y2="-243.84" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="-243.84" x2="88.9" y2="-243.84" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="-243.84" x2="106.68" y2="-243.84" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="-109.22" x2="33.02" y2="-121.92" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="-121.92" x2="30.48" y2="-121.92" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="-121.92" x2="30.48" y2="-266.7" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="-266.7" x2="88.9" y2="-266.7" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="-266.7" x2="88.9" y2="-243.84" width="0.1524" layer="91"/>
+<junction x="88.9" y="-243.84"/>
+<pinref part="R1" gate="G$1" pin="A"/>
+<wire x1="22.86" y1="38.1" x2="22.86" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="A"/>
+<wire x1="22.86" y1="55.88" x2="22.86" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="53.34" x2="12.7" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="53.34" x2="12.7" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="35.56" x2="22.86" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="35.56" x2="-63.5" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-63.5" y1="35.56" x2="-63.5" y2="-266.7" width="0.1524" layer="91"/>
+<junction x="12.7" y="35.56"/>
+<wire x1="-63.5" y1="-266.7" x2="30.48" y2="-266.7" width="0.1524" layer="91"/>
+<junction x="30.48" y="-266.7"/>
+<junction x="33.02" y="-78.74"/>
 </segment>
 </net>
 </nets>
