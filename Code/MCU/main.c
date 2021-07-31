@@ -55,8 +55,8 @@ int main(void){
 	currentDigit[1][1]=ch_2;
 		currentDigit[1][0]=ch_1;
 	sendDecimalToDisplay(169,0,currentDigit);
-	sendDecimalToDisplay(691,2,currentDigit);
-	sendDecimalToDisplay(69,2,currentDigit);
+	//sendDecimalToDisplay(691,2,currentDigit);
+	//sendDecimalToDisplay(69,2,currentDigit);
 		while(1){
 				datargpioe=GPIO_PORTE_DATA_R;
 			datargpioe=datargpioe; //just extra line for debug purposes
@@ -72,8 +72,8 @@ int main(void){
 				ticks++;
 			}
 			updateDigits(slaveAddresses,currentDigit,currentDigitPos,currentDigitPosNum);
-			if((ticks%100)==0)
-				sendDecimalToDisplay(ran++,0,currentDigit);
+			/*if((ticks%100)==0) //JUST FOR TESTING PURPOSES
+				sendDecimalToDisplay(ran++,0,currentDigit);*/
   }
 }
 
@@ -131,6 +131,7 @@ uint8_t sendDecimalToDisplay(int number,uint8_t display, uint8_t currentDigit[SL
 }
 
 void processSlaveCode(uint8_t slaveCode, uint8_t value, uint16_t nextDigitDecimal[SLAVES],uint8_t currentDigit[SLAVES][3]) {
+	slaveCode=slaveCode>>5;
 	switch(slaveCode) {
 		case Alt_Pt1: {
 			nextDigitDecimal[0]=value;
