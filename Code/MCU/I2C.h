@@ -8,10 +8,10 @@ All Rights Reserved.
 #include <stdint.h>
 #include "tm4c123gh6pm.h"
 
-#ifndef UART_H
-#define UART_H
+#ifndef I2C_H
+#define I2C_H
 
-void init_uart(void); //Initializes UART for PC client <-> MCU communication
+void init_I2C(void); //Initializes UART for PC client <-> MCU communication
 void sendByte(uint8_t data);
 uint8_t receiveByte(void);
 
