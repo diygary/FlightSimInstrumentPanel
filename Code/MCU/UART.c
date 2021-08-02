@@ -22,8 +22,11 @@ void sendByte(uint8_t data) {
 	UART1_DR_R=data; //send byte
 }
 
-uint8_t receiveByte(void) {
+uint8_t receiveByte(int *received) {
+	int data=0;
 	while((UART1_FR_R&(1<<4))!=0);
-	return UART5_DR_R;
+	data=UART1_DR_R;
+	*received=1;
+	return data;
 }
 

@@ -21,15 +21,12 @@ void cycleDigits(uint8_t currentDigitPos[SLAVES],uint8_t currentDigitPosNum[SLAV
 void updateDigits(uint8_t slaveAddresses[SLAVES],uint8_t currentDigit[SLAVES][3],uint8_t currentDigitPos[SLAVES],uint8_t currentDigitPosNum[SLAVES]); //will transmit new LED positions to slave
 uint8_t sendDecimalToDisplay(int number,uint8_t display, uint8_t currentDigit[SLAVES][3]); //convert integer value to the correct hexadecimal values for corresponding digit, and update that slave's currentDigit array
 void processSlaveCode(uint8_t slaveCode, uint8_t value, uint16_t nextDigitDecimal[SLAVES],uint8_t currentDigit[SLAVES][3]);
-enum slaveCodesUART{Alt_Pt1,Alt_Pt2,Hdg_Pt1,Hdg_Pt2,Spd_Pt1,Spd_Pt2}; //codes used to identify contents of UART packets, located in last 3 bytes of frame
-void sleep(void) { //function for testing purposes
-	for(int count=0;count<199;count++);
-}
+enum slaveCodesUART{Alt_Pt1,Alt_Pt2,Hdg_Pt1,Hdg_Pt2,Spd_Pt1,Spd_Pt2}; //codes used to identify contents of UART packets, located in last 3 bits
+
 
 int main(void){
 	//PLL_Init();
 	int displayValues[4]; //0=vspeed,valtitude,hspeed,heading
-	//enum slaveCodesUART{Alt_Pt1,Alt_Pt2,Hdg_Pt1,Hdg_Pt2,Spd_P1,Spd_P2}; //codes used to identify contents of UART packets, located in last 3 bytes of frame
 	uint8_t slaveAddresses[SLAVES]={0x20,0x21,0x24};
 	uint8_t currentDigit[SLAVES][3]={{ch_0}}; //all 4 slaves will have a currentChar array associated with the pins that make up the number. 
 	uint8_t currentDigitPos[SLAVES]={digpos_3};//all 4 slaves will have a currentCharPos array associated with the common cathode pins that control which LED will be lit. For the 3-digit displays, the last 2 will be skipped
@@ -51,25 +48,20 @@ int main(void){
 			currentDigit[count][count2]=ch_0;
 		}
 	}
-		currentDigit[1][2]=ch_3;
-	currentDigit[1][1]=ch_2;
-		currentDigit[1][0]=ch_1;
-	sendDecimalToDisplay(169,0,currentDigit);
+	//sendDecimalToDisplay(169,0,currentDigit);
 	//sendDecimalToDisplay(691,2,currentDigit);
 	//sendDecimalToDisplay(69,2,currentDigit);
 		while(1){
 				datargpioe=GPIO_PORTE_DATA_R;
 			datargpioe=datargpioe; //just extra line for debug purposes
-				//i2cwrite(0x01,0x99,1);
-			sendByte('h');
-			sendByte('e');
-			sendByte('l');
-			sendByte('l'); 
-			receivedUARTByte=receiveByte();
-			processSlaveCode(receivedUARTByte&0xE0,receivedUARTByte&0x1F,nextDigitDecimal,currentDigit);
+			int received=0;
+			receivedUARTByte=receiveByte(&received);
+			if(received)
+				processSlaveCode(receivedUARTByte&0xE0,receivedUARTByte&0x1F,nextDigitDecimal,currentDigit);
+			received=0;
 			if((NVIC_ST_CTRL_R&sysTickFlag)==sysTickFlag) { //if 5ms has passed,flag is set
 				cycleDigits(currentDigitPos,currentDigitPosNum);
-				ticks++;
+				//ticks++;
 			}
 			updateDigits(slaveAddresses,currentDigit,currentDigitPos,currentDigitPosNum);
 			/*if((ticks%100)==0) //JUST FOR TESTING PURPOSES
@@ -100,7 +92,15 @@ void cycleDigits(uint8_t currentDigitPos[SLAVES],uint8_t currentDigitPosNum[SLAV
 }	
 
 void updateDigits(uint8_t slaveAddresses[SLAVES],uint8_t currentDigit[SLAVES][3],uint8_t currentDigitPos[SLAVES],uint8_t currentDigitPosNum[SLAVES]) {
-	for(int display=0;display<SLAVES;display++) { //MODIFICATION: Using 0x22 and 0x24 until hardware issues can be worked out
+	
+	//This turns off all segments on GPIOB prior to illuminating next group of segments
+	//Helps prevent a phenomenon known as "ghosting"
+	for(int display=0;display<SLAVES;display++) { 
+		if(i2cwrite(slaveAddresses[display],0xff,MCP23017_GPIOB))
+			reseti2c();
+	}
+	//Illuminate next digit with next group of segments
+	for(int display=0;display<SLAVES;display++) { 
 		if(i2cwrite(slaveAddresses[display],currentDigit[display][currentDigitPosNum[display]],MCP23017_GPIOA))
 			reseti2c();
 		if(i2cwrite(slaveAddresses[display],currentDigitPos[display],MCP23017_GPIOB))
@@ -118,14 +118,14 @@ void initSystick(void) {
 uint8_t sendDecimalToDisplay(int number,uint8_t display, uint8_t currentDigit[SLAVES][3]) {
 	if(number>999)
 		return 1; //error
-	for(uint8_t pos=0;number>0;pos++) {
+	uint8_t pos=0;
+	for(pos=0;number>0;pos++) {
 		currentDigit[display][2-pos]=segmentDigits[number%10];
 		number/=10;
-		if(pos==1&&number<1) {
-			currentDigit[display][0]=segmentDigits[0];
-			break;
-		}
-			
+	}
+	if(pos<3) {
+		for(;pos<3;pos++)
+			currentDigit[display][2-pos]=segmentDigits[0];
 	}
 	return 0;
 }

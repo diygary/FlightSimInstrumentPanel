@@ -13,6 +13,6 @@ All Rights Reserved.
 
 void init_uart(void); //Initializes UART for PC client <-> MCU communication
 void sendByte(uint8_t data);
-uint8_t receiveByte(void);
+uint8_t receiveByte(int *received);
 
 #endif

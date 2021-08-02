@@ -59,7 +59,7 @@ void CALLBACK dispatch(SIMCONNECT_RECV* pData,DWORD cbData,void *pContext) {
 
 			currentFL=(int)flightData->altitude/100;
 			currentSPD=(int)flightData->speed;
-			currentHDG=(int)flightData->heading;
+			currentHDG=(int)(flightData->heading*57.2958);
 		}
 	}
 }
@@ -87,12 +87,12 @@ int main() {
 	while(FAILED(SimConnect_Open(&hSimConnect,"Client Event",NULL,NULL,NULL,NULL)));
 	SimConnect_AddToDataDefinition(hSimConnect,DEFINITION_ID_INSTRUMENT,"INDICATED ALTITUDE","feet");
 	SimConnect_AddToDataDefinition(hSimConnect,DEFINITION_ID_INSTRUMENT,"AIRSPEED INDICATED","knots");
-	SimConnect_AddToDataDefinition(hSimConnect,DEFINITION_ID_INSTRUMENT,"WISKEY COMPASS INDICATION DEGREES","Degrees");
+	SimConnect_AddToDataDefinition(hSimConnect,DEFINITION_ID_INSTRUMENT,"HEADING INDICATOR","radians");
 
 	if(SUCCEEDED(SimConnect_RequestDataOnSimObject(hSimConnect, REQUEST_INSTRUMENT_DATA, DEFINITION_ID_INSTRUMENT, SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_PERIOD_SIM_FRAME))) {
 		std::cout<<"Connected to Microsoft Flight Simulator\nConnecting to COM port\n";
 	}
-
+	
 	//COMM connect
 	hUART=CreateFile("\\\\.\\COM8", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 	GetCommState(hUART, &uartParams);
@@ -112,7 +112,6 @@ int main() {
 	//Main loop cycle: Request data from sim, process and send to MCU, get input data from MCU, process and send to MSFS
 	while(1) {
 		//Get most recent sim data 
-		//std::cin.get();
 		SimConnect_CallDispatch(hSimConnect,dispatch,NULL);
 		//Process and Send to MCU
 		std::cout<<"Sending flight data\n";
