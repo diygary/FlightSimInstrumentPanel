@@ -16,6 +16,14 @@ void init_GPIOE(void) {
 	GPIO_PORTE_AFSEL_R&=0x00;
 	GPIO_PORTE_PCTL_R&=~0x3F;
 	GPIO_PORTE_DEN_R|=0x3F;
+	GPIO_PORTE_IS_R&=0x00;
+	GPIO_PORTE_IS_R&=~0x3F; //Configure all as edge-sensitive
+	GPIO_PORTE_IBE_R&=0x3C; //Buttons - one edge, switches - both edges
+  GPIO_PORTE_IBE_R|=0x3C;
+	GPIO_PORTE_IEV_R&=0x3C; //Falling edge for buttons
+	GPIO_PORTE_IM_R|=0x3F; //Enable the interrupts
+	NVIC_PRI0_R=(NVIC_PRI0_R&0xFFFFFF00)|0x20; //prority 0 (bits 7-5)
+	NVIC_EN0_R|=0x10; //IRQ #4 GPIOE handler
 }
 
 void init_GPIOBwI2C(void) {

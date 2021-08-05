@@ -10,7 +10,6 @@ All Rights Reserved.
 #include "inputs.h"
 #include "UART.h"
 #include "numbers.h"
-#include "PLL.H"
 #define MCP23017_GPIOA 0x12 //for segments
 #define MCP23017_GPIOB 0x13 //for digits
 #define SLAVES 3
@@ -21,11 +20,16 @@ void cycleDigits(uint8_t currentDigitPos[SLAVES],uint8_t currentDigitPosNum[SLAV
 void updateDigits(uint8_t slaveAddresses[SLAVES],uint8_t currentDigit[SLAVES][3],uint8_t currentDigitPos[SLAVES],uint8_t currentDigitPosNum[SLAVES]); //will transmit new LED positions to slave
 uint8_t sendDecimalToDisplay(int number,uint8_t display, uint8_t currentDigit[SLAVES][3]); //convert integer value to the correct hexadecimal values for corresponding digit, and update that slave's currentDigit array
 void processSlaveCode(uint8_t slaveCode, uint8_t value, uint16_t nextDigitDecimal[SLAVES],uint8_t currentDigit[SLAVES][3]);
-enum slaveCodesUART{Alt_Pt1,Alt_Pt2,Hdg_Pt1,Hdg_Pt2,Spd_Pt1,Spd_Pt2}; //codes used to identify contents of UART packets, located in last 3 bits
 
+//already defined in startup.s
+void DisableInterrupts(void);
+void EnableInterrupts(void);
+
+enum slaveCodesUART{Alt_Pt1,Alt_Pt2,Hdg_Pt1,Hdg_Pt2,Spd_Pt1,Spd_Pt2}; //codes used to identify contents of UART packets, located in last 3 bits
+enum inputCodesUART{B1,B2,S1,S2,S3,S4,R1,R2}; //B=Button, S=Switch, R=Rotary Encoder
 
 int main(void){
-	//PLL_Init();
+		DisableInterrupts();
 	int displayValues[4]; //0=vspeed,valtitude,hspeed,heading
 	uint8_t slaveAddresses[SLAVES]={0x20,0x21,0x24};
 	uint8_t currentDigit[SLAVES][3]={{ch_0}}; //all 4 slaves will have a currentChar array associated with the pins that make up the number. 
@@ -39,6 +43,7 @@ int main(void){
 	init_uart();
 	initPortExpanders(slaveAddresses);
 	initSystick();
+	EnableInterrupts();
 	int ticks=0;
 	int ran=100;
 	for(int count=0;count<SLAVES;count++) {
@@ -48,9 +53,6 @@ int main(void){
 			currentDigit[count][count2]=ch_0;
 		}
 	}
-	//sendDecimalToDisplay(169,0,currentDigit);
-	//sendDecimalToDisplay(691,2,currentDigit);
-	//sendDecimalToDisplay(69,2,currentDigit);
 		while(1){
 				datargpioe=GPIO_PORTE_DATA_R;
 			datargpioe=datargpioe; //just extra line for debug purposes
@@ -61,11 +63,8 @@ int main(void){
 			received=0;
 			if((NVIC_ST_CTRL_R&sysTickFlag)==sysTickFlag) { //if 5ms has passed,flag is set
 				cycleDigits(currentDigitPos,currentDigitPosNum);
-				//ticks++;
 			}
 			updateDigits(slaveAddresses,currentDigit,currentDigitPos,currentDigitPosNum);
-			/*if((ticks%100)==0) //JUST FOR TESTING PURPOSES
-				sendDecimalToDisplay(ran++,0,currentDigit);*/
   }
 }
 
@@ -132,6 +131,7 @@ uint8_t sendDecimalToDisplay(int number,uint8_t display, uint8_t currentDigit[SL
 
 void processSlaveCode(uint8_t slaveCode, uint8_t value, uint16_t nextDigitDecimal[SLAVES],uint8_t currentDigit[SLAVES][3]) {
 	slaveCode=slaveCode>>5;
+	slaveCode=slaveCode;
 	switch(slaveCode) {
 		case Alt_Pt1: {
 			nextDigitDecimal[0]=value;
@@ -157,5 +157,62 @@ void processSlaveCode(uint8_t slaveCode, uint8_t value, uint16_t nextDigitDecima
 			nextDigitDecimal[2]|=value;
 			sendDecimalToDisplay(nextDigitDecimal[2],2,currentDigit);
 		}break;
+	}
+}
+
+
+//already declared in startup.s
+void GPIOPortE_Handler(void) {
+	
+	while(GPIO_PORTE_RIS_R) {
+		for(int count=0,mask=GPIO_PORTE_RIS_R;count<6;count++) {
+			char byte=count;
+			byte=byte<<5;
+			switch(count) { //check all 6 bits to see if flag is raised
+				case B1: {
+					if(GPIO_PORTE_RIS_R&0x01) {
+						byte|=GPIO_PORTE_DATA_R&0x01;
+						sendByte(byte);
+						GPIO_PORTE_ICR_R|=0x01;
+					}
+				}break;
+				case B2: {
+					if(GPIO_PORTE_RIS_R&0x02) {
+						byte|=GPIO_PORTE_DATA_R&0x02;
+						sendByte(byte);
+						GPIO_PORTE_ICR_R|=0x02;
+					}
+				}break;
+				case S1: {
+					if(GPIO_PORTE_RIS_R&0x04) {
+						byte|=GPIO_PORTE_DATA_R&0x04;
+						sendByte(byte);
+						GPIO_PORTE_ICR_R|=0x04;
+					}
+				}break;
+				case S2: {
+					if(GPIO_PORTE_RIS_R&0x08) {
+						byte|=GPIO_PORTE_DATA_R&0x08;
+						sendByte(byte);
+						GPIO_PORTE_ICR_R|=0x08;
+					}
+				}break;
+				case S3: {
+					if(GPIO_PORTE_RIS_R&0x10) {
+						byte|=GPIO_PORTE_DATA_R&0x10;
+						sendByte(byte);
+						GPIO_PORTE_ICR_R|=0x10;
+					}
+				}break;
+				case S4: {
+					if(GPIO_PORTE_RIS_R&0x20) {
+						byte|=GPIO_PORTE_DATA_R&0x20;
+						sendByte(byte);
+						GPIO_PORTE_ICR_R|=0x20;
+					}
+				}break;
+				//R1 and R2 not included as they're dependent upon B1/B2 presses
+			}
+		}
 	}
 }
